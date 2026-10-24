@@ -1,0 +1,294 @@
+
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: #f8fafc;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header and Navbar - Flexbox */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.nav-button,
+.primary-button {
+    background-color: #2563eb;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Hero Section - Grid */
+.hero {
+    width: 90%;
+    max-width: 1200px;
+    margin: 55px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.tagline {
+    color: #2563eb;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.7rem);
+    line-height: 1.15;
+    color: #0f172a;
+}
+
+.hero-text p {
+    max-width: 520px;
+    color: #64748b;
+    font-size: 1.05rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 5px;
+}
+
+.secondary-button {
+    color: #2563eb;
+    border: 1px solid #2563eb;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 18px;
+}
+
+/* Features Section */
+.features {
+    padding: 65px 5%;
+    background-color: #eef4ff;
+}
+
+.section-heading {
+    text-align: center;
+    margin: 0 auto 35px;
+}
+
+.section-heading h2,
+.about h2 {
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    color: #0f172a;
+    margin: 10px 0;
+}
+
+.section-heading p {
+    color: #64748b;
+}
+
+/* CSS Grid for feature cards */
+.feature-grid {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+.feature-card {
+    background-color: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
+
+    /* Flexbox inside each card */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    background-color: #dbeafe;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.feature-card h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
+}
+
+.feature-card p {
+    color: #64748b;
+    flex-grow: 1;
+}
+
+.feature-card a {
+    color: #2563eb;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* About section - Flexbox */
+.about {
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about p {
+    max-width: 600px;
+    color: #64748b;
+}
+
+/* Footer */
+footer {
+    background-color: #0f172a;
+    color: white;
+    padding: 25px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    text-align: center;
+}
+
+footer a {
+    color: #93c5fd;
+}
+
+/* Tablet layout */
+@media (min-width: 600px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        gap: 55px;
+        margin-top: 75px;
+        margin-bottom: 75px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 500px) {
+    .navbar {
+        padding: 15px 0;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .features {
+        padding: 45px 5%;
+    }
+}
